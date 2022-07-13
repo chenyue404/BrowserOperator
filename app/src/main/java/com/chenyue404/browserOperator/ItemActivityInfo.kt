@@ -1,4 +1,4 @@
-package com.chenyue404.BrowserOperator
+package com.chenyue404.browserOperator
 
 import android.graphics.drawable.Drawable
 

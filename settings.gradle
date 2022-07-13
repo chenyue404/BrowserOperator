@@ -1,9 +1,11 @@
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        google()
-        mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
+        maven { url 'https://maven.aliyun.com/repository/public' }//central仓和jcenter仓的聚合仓
+        maven { url 'https://maven.aliyun.com/repository/google' }//https://maven.google.com/
+//        google()
+//        mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 }
 rootProject.name = "接线员"

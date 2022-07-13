@@ -1,16 +1,16 @@
-package com.chenyue404.BrowserOperator
+package com.chenyue404.browserOperator
 
-import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.chenyue404.BrowserOperator.extends.bind
-import com.elvishew.xlog.XLog
+import com.chenyue404.androidlib.extends.bind
+import com.chenyue404.androidlib.extends.log
+import com.chenyue404.androidlib.widget.BaseActivity
 
 /**
  * Created by cy on 2021/11/4.
@@ -18,13 +18,15 @@ import com.elvishew.xlog.XLog
 class GetIntentActivity : BaseActivity() {
     private val rvList by bind<RecyclerView>(R.id.rvList)
 
-    override fun getLayoutId() = R.layout.activity_get_intent
+    override fun getContentViewResId() = R.layout.activity_get_intent
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-    override fun initView() {
-        XLog.d(intent)
-
+        log(intent.toString())
+        // 通过intent拿不到是哪个app跳过来的
         val queryIntentActivities = packageManager.queryIntentActivities(
-            Intent(Intent.ACTION_VIEW, Uri.parse("https://")),
+//            Intent(Intent.ACTION_VIEW, Uri.parse("https://")),
+            intent,
             PackageManager.MATCH_ALL
         )
         val activityItemList = queryIntentActivities.map {

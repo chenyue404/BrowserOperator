@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.chenyue404.BrowserOperator">
+    package="com.chenyue404.browserOperator">
 
     <uses-permission
         android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="QueryAllPackagesPermission" />
 
     <application
-        android:name=".App"
+        android:name="com.chenyue404.browserOperator.App"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/Theme.接线员">
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.chenyue404.browserOperator.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".GetIntentActivity"
+            android:name="com.chenyue404.browserOperator.GetIntentActivity"
             android:enabled="true"
             android:exported="true">
             <intent-filter tools:ignore="AppLinkUrlError">
